@@ -23,11 +23,12 @@ jobs:
 
       - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
       - name: Build Jupyter Book
         run: |
-          jupyter-book build psd/
+          python -m jupyter_book build psd/
 
       - name: Deploy to GitHub Pages
         run: |
