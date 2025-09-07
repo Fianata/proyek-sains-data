@@ -26,9 +26,15 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
+      - name: Debug jupyter-book installation
+        run: |
+          which jupyter-book || echo "jupyter-book not in PATH"
+          python -m pip show jupyter-book || echo "jupyter-book not installed"
+          python -m pip list | grep jupyter || echo "no jupyter packages"
+
       - name: Build Jupyter Book
         run: |
-          python -m jupyter_book build psd/
+          jupyter-book build psd/
 
       - name: Deploy to GitHub Pages
         run: |
