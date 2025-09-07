@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -m requirements.txt
+          python -m pip install -r requirements.txt
 
       - name: Build Jupyter Book
         run: |
