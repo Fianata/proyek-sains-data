@@ -4,6 +4,9 @@
 format: jb-book
 root: intro
 chapters:
+- file: intro
 - file: Business_Understanding
+- file : DataUnderstanding
+
 
 
