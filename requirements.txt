@@ -1,4 +1,9 @@
-jupyter-book
-ghp-import
-nbformat
-nbconvert
+# Jupyter Book core
+jupyter-book==0.15.1
+
+# Untuk deploy ke GitHub Pages
+ghp-import==2.1.0
+
+# Untuk mendukung eksekusi notebook dan konversi
+nbformat>=5.9.2
+nbconvert>=7.8.0
