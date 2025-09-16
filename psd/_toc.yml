@@ -6,7 +6,7 @@ root: intro
 chapters:
 - file: Business_Understanding
 - file : DataUnderstanding
-- file : tugas 3
+- file : pre-prosesing
 
 
 
