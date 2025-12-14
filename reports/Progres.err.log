@@ -1,0 +1,62 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.10.19/x64/lib/python3.10/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+plt.figure(figsize=(8, 5))
+sns.scatterplot(
+    data=iris_final,
+    x="petal_length",
+    y="petal_width",
+    hue="class",
+    palette="bright",
+    markers="o",
+    s=40,
+    alpha=0.9
+)
+plt.title("Visualisasi Data Iris", fontsize=12)
+plt.xlabel("Petal Length (cm)", fontsize=9)
+plt.ylabel("Petal Width (cm)", fontsize=9)
+plt.legend(title="Class")
+plt.grid(True)
+plt.show()
+plt.clf()
+print(len(iris_final))
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[3], line 6[0m
+[1;32m      2[0m [38;5;28;01mimport[39;00m[38;5;250m [39m[38;5;21;01mseaborn[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[38;5;21;01msns[39;00m
+[1;32m      4[0m plt[38;5;241m.[39mfigure(figsize[38;5;241m=[39m([38;5;241m8[39m, [38;5;241m5[39m))
+[1;32m      5[0m sns[38;5;241m.[39mscatterplot(
+[0;32m----> 6[0m     data[38;5;241m=[39m[43miris_final[49m,
+[1;32m      7[0m     x[38;5;241m=[39m[38;5;124m"[39m[38;5;124mpetal_length[39m[38;5;124m"[39m,
+[1;32m      8[0m     y[38;5;241m=[39m[38;5;124m"[39m[38;5;124mpetal_width[39m[38;5;124m"[39m,
+[1;32m      9[0m     hue[38;5;241m=[39m[38;5;124m"[39m[38;5;124mclass[39m[38;5;124m"[39m,
+[1;32m     10[0m     palette[38;5;241m=[39m[38;5;124m"[39m[38;5;124mbright[39m[38;5;124m"[39m,
+[1;32m     11[0m     markers[38;5;241m=[39m[38;5;124m"[39m[38;5;124mo[39m[38;5;124m"[39m,
+[1;32m     12[0m     s[38;5;241m=[39m[38;5;241m40[39m,
+[1;32m     13[0m     alpha[38;5;241m=[39m[38;5;241m0.9[39m
+[1;32m     14[0m )
+[1;32m     15[0m plt[38;5;241m.[39mtitle([38;5;124m"[39m[38;5;124mVisualisasi Data Iris[39m[38;5;124m"[39m, fontsize[38;5;241m=[39m[38;5;241m12[39m)
+[1;32m     16[0m plt[38;5;241m.[39mxlabel([38;5;124m"[39m[38;5;124mPetal Length (cm)[39m[38;5;124m"[39m, fontsize[38;5;241m=[39m[38;5;241m9[39m)
+
+[0;31mNameError[0m: name 'iris_final' is not defined
+
